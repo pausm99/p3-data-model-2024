@@ -66,3 +66,47 @@ const team = await db.team.create({
     }
 });
 console.log(`Created team with ID = ${team.teamId}`)
+
+const players = await db.player.findMany({});
+for (const player of players) {
+    try {
+        const stats = await db.playerStats.createMany({
+            data: [
+                {
+                    playerId: player.playerId,
+                    goals: getRandomInt(0, 30),
+                    assists: getRandomInt(0, 20),
+                    yellowCards: getRandomInt(0, 10),
+                    redCards: getRandomInt(0, 5),
+                    season: "2021-2022",
+                    appearances: getRandomInt(10, 38),
+                },
+                {
+                    playerId: player.playerId,
+                    goals: getRandomInt(0, 30),
+                    assists: getRandomInt(0, 20),
+                    yellowCards: getRandomInt(0, 10),
+                    redCards: getRandomInt(0, 5),
+                    season: "2022-2023",
+                    appearances: getRandomInt(10, 38),
+                },
+                {
+                    playerId: player.playerId,
+                    goals: getRandomInt(0, 30),
+                    assists: getRandomInt(0, 20),
+                    yellowCards: getRandomInt(0, 10),
+                    redCards: getRandomInt(0, 5),
+                    season: "2023-2024",
+                    appearances: getRandomInt(10, 38),
+                }
+            ]
+        });
+    } catch (error) {
+        console.error(`Error creating stats for player ${player.playerId}:`, error);
+    }
+}
+
+
+function getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
