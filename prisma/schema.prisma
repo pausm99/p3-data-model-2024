@@ -11,29 +11,29 @@ datasource db {
 }
 
 model League {
-  id        Int      @id @default(autoincrement())
-  name      String
-  country   String
-  teams     Team[]
+  leagueId Int    @id @default(autoincrement())
+  name     String
+  country  String
+  teams    Team[]
 }
 
 model Team {
-  id          Int      @id @default(autoincrement())
-  name        String
-  leagueId    Int
-  league      League   @relation(fields: [leagueId], references: [id])
-  city        String
-  foundation  DateTime
-  players     Player[]
+  teamId     Int      @id @default(autoincrement())
+  name       String
+  leagueId   Int
+  league     League   @relation(fields: [leagueId], references: [leagueId])
+  city       String
+  foundation DateTime
+  players    Player[]
 }
 
 model Player {
-  id         Int      @id @default(autoincrement())
-  name       String
-  teamId     Int
-  team       Team     @relation(fields: [teamId], references: [id])
-  position   String
-  age        Int
-  height     Float
-  wieght     Float
+  playerId Int    @id @default(autoincrement())
+  name     String
+  teamId   Int
+  team     Team   @relation(fields: [teamId], references: [teamId])
+  position String
+  age      Int
+  height   Float
+  weight   Float
 }
