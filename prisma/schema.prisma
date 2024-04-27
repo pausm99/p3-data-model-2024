@@ -28,12 +28,26 @@ model Team {
 }
 
 model Player {
-  playerId Int    @id @default(autoincrement())
-  name     String
-  teamId   Int
-  team     Team   @relation(fields: [teamId], references: [teamId])
-  position String
-  age      Int
-  height   Float
-  weight   Float
+  playerId    Int           @id @default(autoincrement())
+  name        String
+  teamId      Int
+  team        Team          @relation(fields: [teamId], references: [teamId])
+  position    String
+  age         Int
+  height      Float
+  weight      Float
+  playerStats PlayerStats[]
+}
+
+model PlayerStats {
+  playerStatsId Int    @id @default(autoincrement())
+  season        String
+  playerId      Int
+  player        Player @relation(fields: [playerId], references: [playerId])
+  appearances   Int
+  goals         Int
+  assists       Int
+  yellowCards   Int
+  redCards      Int
+  saves         Int?
 }
