@@ -1,4 +1,4 @@
-import db from "../db";
+import db from "../src/db";
 
 const league = await db.league.create({
     data: { 
