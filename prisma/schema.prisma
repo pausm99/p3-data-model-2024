@@ -21,7 +21,7 @@ model Team {
   teamId     Int      @id @default(autoincrement())
   name       String
   leagueId   Int
-  league     League   @relation(fields: [leagueId], references: [leagueId])
+  league     League   @relation(fields: [leagueId], references: [leagueId], onDelete: Cascade, onUpdate: Cascade)
   city       String
   foundation DateTime
   players    Player[]
@@ -31,7 +31,7 @@ model Player {
   playerId    Int           @id @default(autoincrement())
   name        String
   teamId      Int
-  team        Team          @relation(fields: [teamId], references: [teamId])
+  team        Team          @relation(fields: [teamId], references: [teamId], onDelete: Cascade, onUpdate: Cascade)
   position    String
   age         Int
   height      Float
@@ -43,7 +43,7 @@ model PlayerStats {
   playerStatsId Int    @id @default(autoincrement())
   season        String
   playerId      Int
-  player        Player @relation(fields: [playerId], references: [playerId])
+  player        Player @relation(fields: [playerId], references: [playerId], onDelete: Cascade, onUpdate: Cascade)
   appearances   Int
   goals         Int
   assists       Int
