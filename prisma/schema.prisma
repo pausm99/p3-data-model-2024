@@ -32,7 +32,7 @@ model Player {
   name        String
   teamId      Int
   team        Team          @relation(fields: [teamId], references: [teamId], onDelete: Cascade, onUpdate: Cascade)
-  position    String
+  position    Position
   age         Int
   height      Float
   weight      Float
@@ -50,4 +50,11 @@ model PlayerStats {
   yellowCards   Int
   redCards      Int
   saves         Int?
+}
+
+enum Position {
+  Goalkeeper
+  Defender
+  Midfielder
+  Forward
 }
