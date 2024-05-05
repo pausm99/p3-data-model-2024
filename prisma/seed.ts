@@ -13,7 +13,6 @@ const team = await db.team.create({
     data: {
         name: 'FC Barcelona',
         city: 'Barcelona',
-        foundation: new Date('1899-11-29'),
         leagueId: league.leagueId,
         players: {
             createMany: {
