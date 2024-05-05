@@ -23,7 +23,6 @@ model Team {
   leagueId   Int
   league     League   @relation(fields: [leagueId], references: [leagueId], onDelete: Cascade, onUpdate: Cascade)
   city       String
-  foundation DateTime
   players    Player[]
 }
 
