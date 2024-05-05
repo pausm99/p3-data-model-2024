@@ -18,12 +18,12 @@ model League {
 }
 
 model Team {
-  teamId     Int      @id @default(autoincrement())
-  name       String
-  leagueId   Int
-  league     League   @relation(fields: [leagueId], references: [leagueId], onDelete: Cascade, onUpdate: Cascade)
-  city       String
-  players    Player[]
+  teamId   Int      @id @default(autoincrement())
+  name     String
+  leagueId Int
+  league   League   @relation(fields: [leagueId], references: [leagueId], onDelete: Cascade, onUpdate: Cascade)
+  city     String
+  players  Player[]
 }
 
 model Player {
@@ -48,7 +48,7 @@ model PlayerStats {
   assists       Int
   yellowCards   Int
   redCards      Int
-  saves         Int?
+  saves         Int?   @default(0)
 }
 
 enum Position {
