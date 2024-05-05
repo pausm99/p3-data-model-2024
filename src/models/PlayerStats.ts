@@ -11,4 +11,4 @@ export interface PlayerStats {
     yellowCards: number;
     redCards: number;
     saves?: number;
-}  
+}

@@ -12,4 +12,10 @@ export interface Player {
     weight: number;
     playerStats: PlayerStats[];
 }
-  
+
+enum Position {
+    Goalkeeper,
+    Defender,
+    Midfielder,
+    Forward,
+}
