@@ -6,7 +6,7 @@ import {
   getLeagueById,
 } from "../scripts/league";
 
-export function manageLeagues() {
+export async function manageLeagues() {
   let exit = false;
   while (true) {
     console.log("\nChoose an action for Leagues:");
@@ -14,15 +14,15 @@ export function manageLeagues() {
     console.log("2. Get League by ID");
     console.log("3. Create League");
     console.log("4. Delete League");
-    console.log("5. Back");
+    console.log("5. Back\n");
 
     const actionChoice = parseInt(
-      readlineSync.question("Enter action number: ")
+      readlineSync.question("\nEnter action number: ")
     );
 
     switch (actionChoice) {
       case 1:
-        getAllLeagues();
+        await getAllLeagues();
         break;
       case 2:
         handleGetLeagueById();
@@ -43,18 +43,18 @@ export function manageLeagues() {
   }
 }
 
-function handleGetLeagueById() {
+async function handleGetLeagueById() {
   const leagueId = parseInt(readlineSync.question("Enter league ID: "));
-  getLeagueById(leagueId);
+  await getLeagueById(leagueId);
 }
 
-function handleDeleteLeagueById() {
+async function handleDeleteLeagueById() {
   const leagueId = parseInt(readlineSync.question("Enter league ID: "));
-  deleteLeague(leagueId);
+  await deleteLeague(leagueId);
 }
 
-function handleCreateLeagueById() {
+async function handleCreateLeagueById() {
   const name = readlineSync.question("Enter league name: ");
   const country = readlineSync.question("Enter league country: ");
-  createLeague(name, country);
+  await createLeague(name, country);
 }
