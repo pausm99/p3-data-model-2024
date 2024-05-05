@@ -8,12 +8,14 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/readline-sync": "^1.4.8",
     "prisma": "^5.13.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@prisma/client": "5.13.0"
+    "@prisma/client": "5.13.0",
+    "readline-sync": "^1.4.10"
   }
 }
