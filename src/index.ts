@@ -2,6 +2,7 @@ import * as readlineSync from 'readline-sync';
 import { manageLeagues } from './modules/leagueModule';
 import { managePlayerStats } from './modules/statsModule';
 import { manageTeams } from './modules/teamModule';
+import { managePlayers } from './modules/playerModule';
 
 function main() {
     while (true) {
@@ -34,7 +35,5 @@ function main() {
       }
     }
   }
-
-function managePlayers(){}
 
 main();

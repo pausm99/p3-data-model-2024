@@ -13,7 +13,7 @@ export interface Player {
     playerStats: PlayerStats[];
 }
 
-enum Position {
+export enum Position {
     Goalkeeper,
     Defender,
     Midfielder,
