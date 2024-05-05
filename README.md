@@ -1,4 +1,4 @@
-# Como ejecutar el programa
+# Instrucciones de uso
 
 ## Preparar el entorno
 1. Clonar el repositorio
