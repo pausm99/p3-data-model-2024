@@ -1,5 +1,6 @@
 import * as readlineSync from 'readline-sync';
 import { manageLeagues } from './modules/leagueModule';
+import { managePlayerStats } from './modules/statsModule';
 
 function main() {
     while (true) {
@@ -35,6 +36,5 @@ function main() {
   
 function manageTeams(){}
 function managePlayers(){}
-function managePlayerStats(){}
 
 main();
