@@ -48,7 +48,6 @@ model PlayerStats {
   assists       Int
   yellowCards   Int
   redCards      Int
-  saves         Int?   @default(0)
 }
 
 enum Position {
