@@ -59,12 +59,12 @@ async function handleCreateTeam() {
   const teamID = parseInt(readlineSync.question("Enter team ID: "));
 
   let position = readlineSync.question(
-    "Enter player position (Goalkeeper, Defender, Midfieler, Forward): "
+    "Enter player position (Goalkeeper, Defender, Midfielder, Forward): "
   );
   while (!positionValid(position)) {
     console.log("Invalid position. Please enter a valid position.");
     position = readlineSync.question(
-      "Enter player position (Goalkeeper, Defender, Midfieler, Forward): "
+      "Enter player position (Goalkeeper, Defender, Midfielder, Forward): "
     );
   }
   const age = parseInt(readlineSync.question("Enter player age: "));
