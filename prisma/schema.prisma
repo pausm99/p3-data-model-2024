@@ -12,7 +12,7 @@ generator client {
 
 model League {
   leagueId Int    @id @default(autoincrement())
-  name     String
+  name     String @unique
   country  String
   teams    Team[]
 }
