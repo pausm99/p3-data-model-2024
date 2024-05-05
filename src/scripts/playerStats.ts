@@ -18,7 +18,7 @@ export async function getPlayerWithMostGoals(): Promise<void> {
     }
 }
 
-export async function getPlayerWithMostAssist(): Promise<void> {
+export async function getPlayerWithMostAssists(): Promise<void> {
     try {
         const playerStats: any = await db.playerStats.findFirst({
             orderBy: {
@@ -105,7 +105,7 @@ export async function deleteAllStatsFromPlayer(playerId: number): Promise<void> 
     }
 }
 
-export async function createStatsFromPlayer(playerId: number,  season: string, goals: number, assists: number, appearances: number, yellowCards: number, redCards: number, saves?: number): Promise<void> {
+export async function createStatsFromPlayer(playerId: number,  season: string, goals: number, assists: number, appearances: number, yellowCards: number, redCards: number): Promise<void> {
     try {
         const playerStats = await db.playerStats.create({
             data: {
@@ -115,8 +115,7 @@ export async function createStatsFromPlayer(playerId: number,  season: string, g
                 assists,
                 appearances,
                 yellowCards,
-                redCards,
-                saves
+                redCards
             },
             include: {
                 player: true
