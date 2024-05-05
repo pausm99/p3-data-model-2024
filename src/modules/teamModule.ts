@@ -9,7 +9,7 @@ import {
 export async function manageTeams() {
   let exit = false;
   while (!exit) {
-    console.log("\nChoose an action for Player Stats:");
+    console.log("\nChoose an action for Teams:");
     console.log("1. Get all teams");
     console.log("2. Get all teams from league");
     console.log("3. Delete team");

@@ -10,7 +10,7 @@ import { Position } from "../models/Player";
 export async function managePlayers() {
   let exit = false;
   while (!exit) {
-    console.log("\nChoose an action for Player Stats:");
+    console.log("\nChoose an action for Players:");
     console.log("1. Get all players");
     console.log("2. Get all teams from team");
     console.log("3. Delete player");
